@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #616161;
+  --color-surface: #696969;
+  --color-raised: #717171;
+  --color-hover: #797979;
+  --color-border: #818181;
+  --color-border-light: #757575;
+
+  --color-accent: #16a34a;
+  --color-accent-hover: #15803d;
+  --color-accent-light: #dcfce7;
+
+  --color-warm: #ca8a04;
+  --color-warm-light: #fef9c3;
+
+  --color-ink: #fafafa;
+  --color-ink-secondary: #e0e0e0;
+  --color-ink-muted: #cccccc;
+  --color-ink-faint: #b0b0b0;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-muted);
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+  font-family: var(--font-mono);
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.terminal-cursor::after {
+  content: '▊';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+[data-theme="light"] {
+  --color-canvas: #d4d4d4;
+  --color-surface: #dddddd;
+  --color-raised: #d0d0d0;
+  --color-hover: #c8c8c8;
+  --color-border: #b0b0b0;
+  --color-border-light: #bfbfbf;
+
+  --color-accent: #16a34a;
+  --color-accent-hover: #15803d;
+  --color-accent-light: #dcfce7;
+
+  --color-warm: #ca8a04;
+  --color-warm-light: #fef7e0;
+
+  --color-ink: #1f1f1f;
+  --color-ink-secondary: #4a4a4a;
+  --color-ink-muted: #6e7681;
+  --color-ink-faint: #8b949e;
+}
