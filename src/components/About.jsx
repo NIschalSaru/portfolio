@@ -2,10 +2,10 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const stats = [
-  { label: 'Years Experience', value: '5+' },
-  { label: 'Projects Shipped', value: '30+' },
+  { label: 'Years Experience', value: '3+' },
+  { label: 'Projects Shipped', value: '6+' },
   { label: 'Technologies', value: '15+' },
-  { label: 'Clients Served', value: '20+' },
+  { label: 'App Downloads', value: '10k+' },
 ]
 
 const Line = ({ children, delay, className = '' }) => (
@@ -48,27 +48,27 @@ export default function About() {
           >
             <Line delay={0.3}>
               <p className="text-[14px] text-ink-secondary leading-[1.8]">
-                <span className="text-accent">I&apos;m a full-stack developer based in Nepal with a deep passion for
-                building products that solve real problems.</span> What started as
-                curiosity about how websites work has grown into a career
-                building production-grade applications used by thousands.
+                <span className="text-accent">I&apos;m a results-driven software developer based in Nepal with
+                hands-on experience designing and developing scalable web
+                applications and backend systems.</span> Proficient in Laravel, PHP,
+                and modern JavaScript technologies including React.js and Node.js.
               </p>
             </Line>
             <Line delay={0.6}>
               <p className="text-[14px] text-ink-secondary leading-[1.8] mt-5">
-                With expertise across the entire stack — from architecting robust
-                Laravel APIs to designing fluid React interfaces — <span className="text-ink">I bring a
-                holistic, quality-first approach to every project.</span> I care deeply
-                about code quality, thoughtful architecture, and the end-user
-                experience.
+                With strong expertise in RESTful API design, database management,
+                and building secure, high-performance solutions — <span className="text-ink">I&apos;ve shipped
+                production platforms across travel booking, education, utility
+                payment, and HR/attendance.</span> I&apos;m committed to writing clean,
+                maintainable code and delivering products used by thousands.
               </p>
             </Line>
             <Line delay={0.9}>
               <p className="text-[14px] text-ink-secondary leading-[1.8] mt-5">
                 <span className="text-warm">I believe great software is built at the intersection of technical
                 excellence and genuine empathy for users.</span> When I&apos;m not coding,
-                I&apos;m exploring new technologies and contributing to the developer
-                community.
+                I&apos;m exploring new technologies and continuously improving my
+                skills to deliver impactful software products.
               </p>
             </Line>
           </motion.div>

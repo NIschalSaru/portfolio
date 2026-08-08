@@ -5,38 +5,56 @@ const projects = [
   {
     title: 'ping-nepal',
     description:
-      'Full-stack mobile recharge and bill payment platform with real-time transaction processing, user accounts, and payment gateway integration.',
-    tech: ['Laravel', 'React', 'MySQL', 'REST API', 'Redis'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+      'Online bill payment & mobile recharge platform enabling users to recharge NTC/Ncell numbers and pay utility bills (electricity, landline, internet, TV, insurance, water) instantly and securely. Real-time processing with seamless service integrations.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://www.pingnepal.com/',
     tag: 'full-stack',
   },
   {
-    title: 'admin-dashboard',
+    title: 'woori-hakkyo',
     description:
-      'Comprehensive admin panel with user management, analytics dashboards, role-based access control, real-time reporting, and data visualizations.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Socket.io'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    tag: 'frontend',
-  },
-  {
-    title: 'ecommerce-api',
-    description:
-      'Scalable e-commerce backend with product catalog, cart system, checkout flow, Stripe payments, order tracking, and inventory management.',
-    tech: ['Laravel', 'MySQL', 'PHP', 'Stripe', 'Redis'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+      'Backend API for the Woori Hakkyo education app — Korean language learning and EPS-TOPIK exam prep. Structured learning modules, full-length mock exams (UBT & CBT), offline exams, study reminders, and in-app purchases. 10,000+ downloads with strong premium conversion.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
+    github: 'https://github.com/NIschalSaru',
+    live: '#',
     tag: 'backend',
   },
   {
-    title: 'realtime-chat',
+    title: 'yatra-nepal',
     description:
-      'Messaging platform with real-time communication, group chats, file sharing, typing indicators, read receipts, and end-to-end encryption.',
-    tech: ['Node.js', 'React', 'MongoDB', 'Socket.io', 'WebRTC'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+      'Travel booking platform for booking hotels, domestic/international flights, bus tickets, vehicle rentals, and curated travel packages across Nepal. Advanced search & filters and secure payment integration.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://yatraanepal.com.np/',
     tag: 'full-stack',
+  },
+  {
+    title: 'bee-suite',
+    description:
+      'HR & attendance management system supporting biometric devices, QR codes, and manual input with real-time updates. Customizable attendance policies, shift/overtime/leave rules, detailed reporting, automated alerts, and payroll/HR integrations.',
+    tech: ['Laravel', 'PHP', 'JavaScript', 'MySQL'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://beetech.beesuiteerp.com/',
+    tag: 'full-stack',
+  },
+  {
+    title: 'rpp-membership',
+    description:
+      'Membership management system for Rastriya Prajatantra Party supporting General (free) and Active (paid) memberships with online application, Khalti payment integration, and an admin verification panel for generating membership ID cards.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://rpp.org.np/',
+    tag: 'full-stack',
+  },
+  {
+    title: 'ndnb-portal',
+    description:
+      'Official website and client portal for a leading architecture, interior design, and construction firm in Kathmandu. Enables clients to explore services and follow project progress through a clean, professional interface.',
+    tech: ['React', 'JavaScript', 'Node.js', 'CSS'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://ndnb.com.np/',
+    tag: 'frontend',
   },
 ]
 

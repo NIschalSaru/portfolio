@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import myself from "../assets/profile.png";
+import resume from "../assets/resume.pdf";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center px-5 pt-16 overflow-hidden"
+      className="relative min-h-[85vh] flex items-center px-5 pt-16 overflow-hidden hero-glitch"
     >
       {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-border-light/40 rounded-full blur-[100px]" />
@@ -44,9 +45,9 @@ export default function Hero() {
             Full-Stack Developer
           </h2>
           <p className="text-[15px] sm:text-[16px] text-ink-secondary leading-relaxed max-w-xl mt-5">
-            I build production-grade web applications with clean code and
-            thoughtful UX. Specializing in Laravel, React, and modern web
-            technologies to create seamless digital experiences.
+            I build production-grade web applications with clean, maintainable
+            code. Specializing in Laravel, PHP, Node.js, and RESTful API design
+            to power secure, high-performance platforms.
           </p>
         </motion.div>
 
@@ -92,7 +93,8 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="#"
+            href={resume}
+            download
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-surface text-ink font-semibold text-sm rounded-full border border-border-light shadow-sm hover:shadow-md hover:border-border transition-all duration-200"
           >
             <svg
