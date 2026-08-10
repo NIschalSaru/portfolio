@@ -4,6 +4,7 @@ import pingNepalImg from '../assets/pingnepal.webp'
 import woorihakkyoImg from '../assets/woorihakkyo.webp'
 import yatraNepalImg from '../assets/yatranepal.webp'
 import beeSuiteImg from '../assets/beesuite.webp'
+import rppImg from '../assets/rpp.jpg'
 
 const projects = [
   {
@@ -53,6 +54,7 @@ const projects = [
     tech: ['Laravel', 'PHP', 'PostgreSQL', 'Jquery', 'Bootstrap'],
     github: 'https://github.com/NIschalSaru',
     live: 'https://rpp.org.np/',
+    image: rppImg,
     tag: 'Backend',
   },
   {
