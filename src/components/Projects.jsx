@@ -96,24 +96,26 @@ function ProjectRow({ project, index }) {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="group relative block w-full lg:w-[58%] shrink-0"
         >
-          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-raised border border-border-light">
-            {project.image ? (
+          {project.image ? (
+            <div className="relative rounded-2xl overflow-hidden bg-raised border border-border-light">
               <img
                 src={project.image}
                 alt={`${project.title} preview`}
                 loading="lazy"
-                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               />
-            ) : (
+              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
+              <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-surface border border-border-light flex items-center justify-center text-ink translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <ArrowIcon />
+              </div>
+            </div>
+          ) : (
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-raised border border-border-light">
               <div className="w-full h-full flex items-center justify-center text-ink-muted text-sm">
                 {project.title}
               </div>
-            )}
-            <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
-            <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-surface border border-border-light flex items-center justify-center text-ink translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-              <ArrowIcon />
             </div>
-          </div>
+          )}
         </motion.a>
 
         {/* content */}

@@ -16,21 +16,11 @@ const experiences = [
     role: 'Software Developer',
     company: 'Shangrila Informatics',
     location: 'Rudramati Marga, Kathmandu',
-    range: 'Jun 2023 — Feb 2025',
+    range: 'Mar 2023 — Feb 2025',
     url: '',
     description:
-      'Developed and maintained web applications using Laravel, ensuring high performance and responsiveness across platforms. Integrated RESTful APIs for seamless frontend-backend data exchange, worked with cross-functional teams to identify and prioritize features, and conducted code reviews and developed unit & system tests to maintain software quality.',
-    technologies: ['Laravel', 'PHP', 'MySQL', 'REST API'],
-  },
-  {
-    role: 'Software Developer Intern',
-    company: 'Shangrila Informatics',
-    location: 'Rudramati Marga, Kathmandu',
-    range: 'Mar 2023 — May 2023',
-    url: '',
-    description:
-      'Developed and tested web applications using PHP and Laravel. Participated in code reviews and debugging processes to ensure code quality and project standards, and used Git for version control while collaborating via Jira in an Agile environment.',
-    technologies: ['PHP', 'Laravel', 'Git', 'Jira'],
+      'Started as an intern and grew into a full-time developer role. Developed and maintained web applications using Laravel, ensuring high performance and responsiveness across platforms. Integrated RESTful APIs for seamless frontend-backend data exchange, worked with cross-functional teams to identify and prioritize features, and conducted code reviews and developed unit & system tests to maintain software quality. Used Git for version control while collaborating via Jira in an Agile environment.',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'REST API', 'Git', 'Jira'],
   },
 ]
 
