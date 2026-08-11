@@ -112,7 +112,7 @@ export default function Experience() {
               ))}
             </div>
 
-            <div className="flex-1 md:ml-8 min-w-0">
+            <div className="flex-1 md:ml-42 min-w-0">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={index}
