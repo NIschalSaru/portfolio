@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,6 +9,15 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = "";
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark-900">
       <div className="pointer-events-none fixed bottom-0 right-5 sm:right-20 h-[50vh] w-max flex flex-col items-center gap-4 z-40 md:sticky md:top-[72px] md:bottom-auto md:-mb-[50vh] md:left-14 md:sm:left-20 md:right-auto">

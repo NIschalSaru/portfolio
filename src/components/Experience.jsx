@@ -32,8 +32,13 @@ export default function Experience() {
   const [index, setIndex] = useState(0)
   const count = experiences.length
   const tabsRef = useRef([])
+  const isFirstRender = useRef(true)
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     const el = tabsRef.current[index]
     if (el && typeof el.scrollIntoView === 'function') {
       el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
