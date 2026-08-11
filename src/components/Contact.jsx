@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 const socialLinks = [
   {
@@ -40,9 +41,33 @@ export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [isSending, setIsSending] = useState(false)
+  const [sent, setSent] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsSending(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          year: new Date().getFullYear(),
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      setSent(true)
+    } catch {
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' })
+    } finally {
+      setIsSending(false)
+    }
   }
 
   return (
@@ -124,13 +149,40 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.form
-            initial={{ opacity: 0, x: 24 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            onSubmit={handleSubmit}
-            className="border border-border-light rounded-lg p-6 bg-surface"
-          >
+          {sent ? (
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="border border-border-light rounded-lg p-6 bg-surface flex flex-col items-center justify-center text-center min-h-[400px]"
+            >
+              <div className="w-14 h-14 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-medium text-ink mb-3">Message sent!</h3>
+              <p className="text-[14px] text-ink-secondary leading-relaxed max-w-sm mb-8">
+                Thank you for reaching out. I&apos;ve received your message and will get back to you as soon as possible.
+              </p>
+              <button
+                onClick={() => {
+                  setSent(false)
+                  setFormData({ name: '', email: '', message: '' })
+                }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent/10 border border-accent/30 text-accent rounded-lg hover:bg-accent/20 transition-all duration-200 font-mono"
+              >
+                send another message
+              </button>
+            </motion.div>
+          ) : (
+            <motion.form
+              initial={{ opacity: 0, x: 24 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              onSubmit={handleSubmit}
+              className="border border-border-light rounded-lg p-6 bg-surface"
+            >
             <div className="mb-5">
               <label className="block text-[13px] text-ink-secondary font-mono mb-2">
                 <span className="text-[#15803d]">Name: </span>
@@ -169,14 +221,25 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent/10 border border-accent/30 text-accent rounded-lg hover:bg-accent/20 transition-all duration-200 font-mono"
+              disabled={isSending}
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent/10 border border-accent/30 text-accent rounded-lg hover:bg-accent/20 transition-all duration-200 font-mono disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
               </svg>
-              send message
+              {isSending ? 'sending...' : 'send message'}
             </button>
-          </motion.form>
+            {status.message && (
+              <p
+                className={`mt-4 text-[13px] font-mono ${
+                  status.type === 'success' ? 'text-[#15803d]' : 'text-red-400'
+                }`}
+              >
+                {status.message}
+              </p>
+            )}
+            </motion.form>
+          )}
         </div>
       </div>
     </section>
