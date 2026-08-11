@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import pingNepalImg from '../assets/pingnepal.webp'
 import woorihakkyoImg from '../assets/woorihakkyo.webp'
 import yatraNepalImg from '../assets/yatranepal.webp'
@@ -197,6 +197,9 @@ function ProjectRow({ project, index }) {
 export default function Projects() {
   const headerRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true, margin: '-80px' })
+  const [visibleCount, setVisibleCount] = useState(4)
+
+  const shownProjects = projects.slice(0, visibleCount)
 
   return (
     <section id="projects" className="relative py-24 md:py-32 px-5 sm:px-8">
@@ -221,10 +224,22 @@ export default function Projects() {
         </motion.div>
 
         <div className="mt-6">
-          {projects.map((project, i) => (
+          {shownProjects.map((project, i) => (
             <ProjectRow key={project.title} project={project} index={i} />
           ))}
         </div>
+
+        {visibleCount < projects.length && (
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={() => setVisibleCount((c) => c + 2)}
+              className="inline-flex items-center gap-2 rounded-full border border-border-light px-8 py-3.5 text-sm font-medium text-ink hover:border-accent hover:text-accent transition-colors"
+            >
+              View more projects
+              <ArrowIcon />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

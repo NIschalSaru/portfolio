@@ -79,7 +79,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[13px] text-ink font-mono font-medium">
-                    <span className="text-[#58a6ff]">$</span> echo $EMAIL
+                    <span className="text-[#15803d]">EMAIL</span>
                   </p>
                   <p className="text-[13px] text-ink-secondary font-mono mt-0.5">nischalsaru.official@gmail.com</p>
                 </div>
@@ -94,7 +94,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[13px] text-ink font-mono font-medium">
-                    <span className="text-[#58a6ff]">$</span> cat /etc/location
+                    <span className="text-[#15803d]">LOCATION</span>
                   </p>
                   <p className="text-[13px] text-ink-secondary font-mono mt-0.5">Kathmandu, Nepal</p>
                 </div>
@@ -133,7 +133,7 @@ export default function Contact() {
           >
             <div className="mb-5">
               <label className="block text-[13px] text-ink-secondary font-mono mb-2">
-                <span className="text-[#58a6ff]">$</span> read -p &quot;Name: &quot;
+                <span className="text-[#15803d]">Name: </span>
               </label>
               <input
                 type="text"
@@ -145,7 +145,7 @@ export default function Contact() {
             </div>
             <div className="mb-5">
               <label className="block text-[13px] text-ink-secondary font-mono mb-2">
-                <span className="text-[#58a6ff]">$</span> read -p &quot;Email: &quot;
+                <span className="text-[#15803d]">Email: </span>
               </label>
               <input
                 type="email"
@@ -157,7 +157,7 @@ export default function Contact() {
             </div>
             <div className="mb-5">
               <label className="block text-[13px] text-ink-secondary font-mono mb-2">
-                <span className="text-[#58a6ff]">$</span> cat &gt; message.txt
+                <span className="text-[#15803d]">Message: </span>
               </label>
               <textarea
                 rows={4}
