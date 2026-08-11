@@ -5,6 +5,8 @@ import woorihakkyoImg from '../assets/woorihakkyo.webp'
 import yatraNepalImg from '../assets/yatranepal.webp'
 import beeSuiteImg from '../assets/beesuite.webp'
 import rppImg from '../assets/rpp.jpg'
+import ndnbImg from '../assets/ndnb.jpg'
+import akaruiImg from '../assets/akurai.jpg'
 
 const projects = [
   {
@@ -60,10 +62,22 @@ const projects = [
   {
     title: 'ndnb-portal',
     description:
-      'Official website and client portal for a leading architecture, interior design, and construction firm in Kathmandu. Enables clients to explore services and follow project progress through a clean, professional interface.',
+      'Full-stack website and client portal for Nepal Designers & Builders (NDB), a Kathmandu-based architecture, interior design and construction firm. Features project showcases, service listings, real-time progress tracking, and a clean professional interface for clients to explore design-build solutions across Nepal.',
     tech: ['React', 'JavaScript', 'Node.js', 'CSS', 'PostgreSQL'],
     github: 'https://github.com/NIschalSaru',
     live: 'https://ndnb.com.np/',
+    image: ndnbImg,
+    tag: 'Full-Stack',
+  },
+
+  {
+    title: 'akarui-shorai',
+    description:
+      'Modern educational consultancy website for Akarui Shorai, a Japanese language and study-abroad firm based in Kathmandu. Helps students explore study and work opportunities in Japan through language classes, visa guidance, documentation support, and destination showcases with a clean, engaging interface.',
+    tech: ['React', 'JavaScript', 'Node.js', 'CSS', 'PostgreSQL'],
+    github: 'https://github.com/NIschalSaru',
+    live: 'https://akaruishorai.com/',   // replace with exact live URL if different
+    image: akaruiImg,
     tag: 'Full-Stack',
   },
 ]
