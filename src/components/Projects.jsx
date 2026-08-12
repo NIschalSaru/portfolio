@@ -1,110 +1,117 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import pingNepalImg from '../assets/pingnepal.webp'
-import woorihakkyoImg from '../assets/woorihakkyo.webp'
-import yatraNepalImg from '../assets/yatranepal.webp'
-import beeSuiteImg from '../assets/beesuite.webp'
-import rppImg from '../assets/rpp.jpg'
-import ndnbImg from '../assets/ndnb.jpg'
-import akaruiImg from '../assets/akurai.jpg'
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import pingNepalImg from "../assets/pingnepal.webp";
+import woorihakkyoImg from "../assets/woorihakkyo.webp";
+import yatraNepalImg from "../assets/yatranepal.webp";
+import beeSuiteImg from "../assets/beesuite.webp";
+import rppImg from "../assets/rpp.jpg";
+import ndnbImg from "../assets/ndnb.jpg";
+import akaruiImg from "../assets/akurai.jpg";
 
 const projects = [
   {
-    title: 'ping-nepal',
+    title: "ping-nepal",
     description:
-      'Online bill payment & mobile recharge platform enabling users to recharge NTC/Ncell numbers and pay utility bills (electricity, landline, internet, TV, insurance, water) instantly and securely. Real-time processing with seamless service integrations.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'REST API', 'Jquery'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://www.pingnepal.com/',
+      "An online bill payment and mobile recharge platform enabling overseas Nepali users to recharge NTC/Ncell numbers and pay utility bills (electricity, landline, internet, TV, insurance, and water) instantly and securely for their families back home. Real-time processing with seamless service integrations.",
+    tech: ["Laravel", "PHP", "MySQL", "REST API", "Jquery"],
+    live: "https://www.pingnepal.com/",
     image: pingNepalImg,
-    tag: 'Full-Stack',
+    tag: "Full-Stack",
   },
   {
-    title: 'woori-hakkyo',
+    title: "woori-hakkyo",
     description:
-      'Backend API for the Woori Hakkyo education app — Korean language learning and EPS-TOPIK exam prep. Structured learning modules, full-length mock exams (UBT & CBT), offline exams, study reminders, and in-app purchases. 10,000+ downloads with strong premium conversion.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
-    github: 'https://github.com/NIschalSaru',
-    live: '#',
+      "Backend API for the Woori Hakkyo education app — Korean language learning and EPS-TOPIK exam prep. Structured learning modules, full-length mock exams (UBT & CBT), offline exams, study reminders, and in-app purchases. 10,000+ downloads with strong premium conversion.",
+    tech: ["Laravel", "PHP", "MySQL", "REST API"],
+    live: "https://play.google.com/store/apps/details?id=com.abms.ubtcbttest&hl=en",
     image: woorihakkyoImg,
-    tag: 'Backend',
+    tag: "Backend",
   },
   {
-    title: 'yatra-nepal',
+    title: "yatra-nepal",
     description:
-      'Travel booking platform for booking hotels, domestic/international flights, bus tickets, vehicle rentals, and curated travel packages across Nepal. Advanced search & filters and secure payment integration.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'REST API'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://yatraanepal.com.np/',
+      "Travel booking platform for booking hotels, domestic/international flights, bus tickets, vehicle rentals, and curated travel packages across Nepal. Advanced search & filters and secure payment integration.",
+    tech: ["Laravel", "PHP", "MySQL", "REST API"],
+    live: "https://yatraanepal.com.np/",
     image: yatraNepalImg,
-    tag: 'Full-Stack',
+    tag: "Full-Stack",
   },
   {
-    title: 'bee-suite',
+    title: "bee-suite",
     description:
-      'HR & attendance management system supporting biometric devices, QR codes, and manual input with real-time updates. Customizable attendance policies, shift/overtime/leave rules, detailed reporting, automated alerts, and payroll/HR integrations.',
-    tech: ['Laravel', 'PHP', 'Jquery', 'MySQL'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://beetech.beesuiteerp.com/',
+      "HR & attendance management system supporting biometric devices, QR codes, and manual input with real-time updates. Customizable attendance policies, shift/overtime/leave rules, detailed reporting, automated alerts, and payroll/HR integrations.",
+    tech: ["Laravel", "PHP", "Jquery", "MySQL"],
+    live: "https://beetech.beesuiteerp.com/",
     image: beeSuiteImg,
-    tag: 'Backend',
+    tag: "Backend",
   },
   {
-    title: 'rpp-membership',
+    title: "rpp-membership",
     description:
-      'Membership management system for Rastriya Prajatantra Party supporting General (free) and Active (paid) memberships with online application, Khalti payment integration, and an admin verification panel for generating membership ID cards.',
-    tech: ['Laravel', 'PHP', 'PostgreSQL', 'Jquery', 'Bootstrap'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://rpp.org.np/',
+      "Membership management system for Rastriya Prajatantra Party supporting General (free) and Active (paid) memberships with online application, Khalti payment integration, and an admin verification panel for generating membership ID cards.",
+    tech: ["Laravel", "PHP", "PostgreSQL", "Jquery", "Bootstrap"],
+    live: "https://rpp.org.np/",
     image: rppImg,
-    tag: 'Backend',
+    tag: "Backend",
   },
   {
-    title: 'ndnb-portal',
+    title: "ndnb-portal",
     description:
-      'Full-stack website and client portal for Nepal Designers & Builders (NDB), a Kathmandu-based architecture, interior design and construction firm. Features project showcases, service listings, real-time progress tracking, and a clean professional interface for clients to explore design-build solutions across Nepal.',
-    tech: ['React', 'JavaScript', 'Node.js', 'CSS', 'PostgreSQL'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://ndnb.com.np/',
+      "A modern full-stack website for Nepal Designers & Builders, showcasing their construction and design services, featured projects, company information, and contact details. Built with a responsive interface and a admin panelfor managing dynamic content.",
+    tech: ["React", "JavaScript", "Node.js", "CSS", "PostgreSQL"],
+    live: "https://ndnb.com.np/",
     image: ndnbImg,
-    tag: 'Full-Stack',
+    tag: "Full-Stack",
   },
-
   {
-    title: 'akarui-shorai',
+    title: "akarui-shorai",
     description:
-      'Modern educational consultancy website for Akarui Shorai, a Japanese language and study-abroad firm based in Kathmandu. Helps students explore study and work opportunities in Japan through language classes, visa guidance, documentation support, and destination showcases with a clean, engaging interface.',
-    tech: ['React', 'JavaScript', 'Node.js', 'CSS', 'PostgreSQL'],
-    github: 'https://github.com/NIschalSaru',
-    live: 'https://akaruishorai.com/',   // replace with exact live URL if different
+      "A modern business website designed to present the brand, its services, and key information through a clean and responsive user interface. The site focuses on clear content presentation, smooth navigation, and a professional visual experience across different screen sizes.",
+    tech: ["React", "JavaScript", "Node.js", "CSS", "PostgreSQL"],
+    live: "https://akaruishorai.com/",
     image: akaruiImg,
-    tag: 'Full-Stack',
+    tag: "Full-Stack",
   },
-]
+];
 
 function ArrowIcon() {
   return (
-    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7v9" />
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={1.75}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H8M17 7v9"
+      />
     </svg>
-  )
+  );
 }
 
 function ProjectRow({ project, index }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const reversed = index % 2 === 1
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const reversed = index % 2 === 1;
 
   return (
-    <div ref={ref} className="relative py-14 md:py-20 border-b border-border-light last:border-b-0">
+    <div
+      ref={ref}
+      className="relative py-14 md:py-20 border-b border-border-light last:border-b-0"
+    >
       <div
         className={`flex flex-col ${
-          reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          reversed ? "lg:flex-row-reverse" : "lg:flex-row"
         } items-center gap-10 lg:gap-16`}
       >
         {/* image */}
         <motion.a
-          href={project.live && project.live !== '#' ? project.live : project.github}
+          href={
+            project.live && project.live !== "#" ? project.live : project.github
+          }
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 32 }}
@@ -142,7 +149,9 @@ function ProjectRow({ project, index }) {
           className="w-full lg:w-[42%]"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[13px] font-mono text-ink-muted">{String(index + 1).padStart(2, '0')}</span>
+            <span className="text-[13px] font-mono text-ink-muted">
+              {String(index + 1).padStart(2, "0")}
+            </span>
             <span className="h-px flex-1 bg-border-light" />
             <span className="text-[11px] font-mono uppercase tracking-wider text-ink-secondary">
               {project.tag}
@@ -161,13 +170,15 @@ function ProjectRow({ project, index }) {
             {project.tech.map((t, i) => (
               <li key={t} className="flex items-center gap-3">
                 {t}
-                {i !== project.tech.length - 1 && <span className="w-1 h-1 rounded-full bg-border" />}
+                {i !== project.tech.length - 1 && (
+                  <span className="w-1 h-1 rounded-full bg-border" />
+                )}
               </li>
             ))}
           </ul>
 
           <div className="flex items-center gap-6 text-[13px] font-medium">
-            {project.live && project.live !== '#' && (
+            {project.live && project.live !== "#" && (
               <a
                 href={project.live}
                 target="_blank"
@@ -178,7 +189,7 @@ function ProjectRow({ project, index }) {
                 <ArrowIcon />
               </a>
             )}
-            <a
+            {/* <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -186,24 +197,24 @@ function ProjectRow({ project, index }) {
             >
               Source
               <ArrowIcon />
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
 
 export default function Projects() {
-  const headerRef = useRef(null)
-  const headerInView = useInView(headerRef, { once: true, margin: '-80px' })
-  const [visibleCount, setVisibleCount] = useState(4)
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
+  const [visibleCount, setVisibleCount] = useState(4);
 
-  const shownProjects = projects.slice(0, visibleCount)
+  const shownProjects = projects.slice(0, visibleCount);
 
   return (
-    <section id="projects" className="relative py-24 md:py-32 px-5 sm:px-8">
-      <div className="max-w-[1180px] mx-auto">
+    <section id="projects" className="relative py-16 md:py-24 px-5">
+      <div className="max-w-[1100px] mx-auto">
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 24 }}
@@ -218,8 +229,9 @@ export default function Projects() {
             Projects
           </h2>
           <p className="text-ink-secondary text-[15px] leading-relaxed">
-            A collection of full-stack platforms and backend systems I&apos;ve designed and shipped —
-            from payment infrastructure to education tools.
+            A collection of full-stack platforms and backend systems I&apos;ve
+            designed and shipped — from payment infrastructure to education
+            tools.
           </p>
         </motion.div>
 
@@ -242,5 +254,5 @@ export default function Projects() {
         )}
       </div>
     </section>
-  )
+  );
 }

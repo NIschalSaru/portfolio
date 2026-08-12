@@ -72,16 +72,16 @@ function TechTile({ skill, index, isInView }) {
       transition={{ duration: 0.3, delay: 0.08 + index * 0.05 }}
       className="flex flex-col items-center gap-2"
     >
-      <div className="w-16 h-16 flex items-center justify-center rounded-lg border border-border-light bg-canvas/50">
+      <div className="w-12 h-12 flex items-center justify-center rounded-lg border border-border-light bg-canvas/50">
         {skill.img ? (
           <img
             src={skill.img}
             alt={skill.name}
-            className="w-10 h-10 object-contain"
+            className="w-7 h-7 object-contain"
           />
         ) : (
           <svg
-            className="w-10 h-10 text-ink"
+            className="w-7 h-7 text-ink"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
@@ -89,7 +89,7 @@ function TechTile({ skill, index, isInView }) {
           </svg>
         )}
       </div>
-      <span className="text-[12px] text-ink-secondary font-mono text-center leading-tight">
+      <span className="text-[11px] text-ink-secondary font-mono text-center leading-tight">
         {skill.name}
       </span>
     </motion.div>
@@ -103,7 +103,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 md:py-32 px-5 bg-canvas font-mono"
+      className="relative py-16 md:py-24 px-5 bg-canvas font-mono"
       ref={ref}
     >
       <div className="max-w-[1100px] mx-auto">
@@ -111,7 +111,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-8"
         >
           <p className="text-[12px] text-ink-secondary mb-2">
             <span className="text-[#58a6ff]">$</span>
@@ -124,25 +124,25 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-4">
           {skillCategories.map((cat, i) => (
             <motion.div
               key={cat.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="border border-border-light rounded-lg p-6 bg-surface"
+              className="border border-border-light rounded-lg p-4 bg-surface"
             >
               <div className="flex items-center gap-3 mb-1">
                 <span className="text-accent text-[11px] font-mono">
                   [{cat.title}]
                 </span>
               </div>
-              <p className="text-[12px] text-ink-muted font-mono mb-6">
+              <p className="text-[11px] text-ink-muted font-mono mb-4">
                 <span className="text-ink-muted">#</span> {cat.description}
               </p>
 
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid grid-cols-3 gap-4">
                 {cat.skills.map((skill, j) => (
                   <TechTile
                     key={skill.name}

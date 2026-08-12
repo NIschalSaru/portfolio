@@ -14,18 +14,22 @@ export default function App() {
     window.scrollTo(0, 0);
     document.documentElement.style.scrollBehavior = "";
     if (window.location.hash) {
-      history.replaceState(null, "", window.location.pathname + window.location.search);
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search,
+      );
     }
   }, []);
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <div className="pointer-events-none fixed bottom-0 right-5 sm:right-20 h-[50vh] w-max flex flex-col items-center gap-4 z-40 md:sticky md:top-[72px] md:bottom-auto md:-mb-[50vh] md:left-14 md:sm:left-20 md:right-auto">
-        <div className="w-px flex-1 bg-border-light order-2 md:order-1" />
-        <div className="order-1 md:order-2">
+      <div className="pointer-events-none fixed bottom-0 right-5 sm:right-20 h-[50vh] w-max flex flex-col items-center justify-end gap-4 z-40 md:sticky md:top-[72px] md:bottom-auto md:-mb-[50vh] md:left-14 md:sm:left-20 md:right-auto">
+        <div className="w-px h-16 md:h-auto md:flex-1 bg-border-light order-2 md:order-1" />
+        <div className="order-1 md:order-2 pointer-events-auto">
           <div className="flex flex-col items-center gap-5">
             <a
-              href="#"
+              href="https://github.com/NIschalSaru"
               title="GitHub"
               className="text-ink-muted hover:text-accent transition-colors"
             >
@@ -34,7 +38,7 @@ export default function App() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/nischal-saru-324454282/"
               title="LinkedIn"
               className="text-ink-muted hover:text-accent transition-colors"
             >
@@ -43,7 +47,7 @@ export default function App() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/nischal0525/"
               title="Facebook"
               className="text-ink-muted hover:text-accent transition-colors"
             >
@@ -52,7 +56,7 @@ export default function App() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://wa.me/9779818750424"
               title="WhatsApp"
               className="text-ink-muted hover:text-accent transition-colors"
             >
@@ -67,9 +71,9 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
-        <Projects />
         <Experience />
+        <Projects />
+        <Skills />
         <Contact />
       </main>
       <Footer />

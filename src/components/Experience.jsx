@@ -1,66 +1,81 @@
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
 const experiences = [
   {
-    role: 'Software Developer',
-    company: 'Beetech Solution Pvt. Ltd.',
-    location: 'Chabahil, Kathmandu',
-    range: 'Mar 2025 — Present',
-    url: '',
+    role: "Software Developer",
+    company: "Beetech Solution",
+    location: "Chabahil, Kathmandu",
+    range: "Mar 2025 — Present",
+    url: "",
     description:
-      'Developing and maintaining web applications and backend APIs using Laravel, PHP, and modern JavaScript technologies with a focus on performance, security, and scalability. Designing and integrating RESTful APIs and third-party payment/booking services for production platforms, collaborating in an Agile environment, and contributing to full-lifecycle development of travel booking, education, utility payment, and HR/attendance systems.',
-    technologies: ['Laravel', 'PHP', 'JavaScript', 'REST API'],
+      "Developing and maintaining web applications and backend APIs using Laravel, PHP, and modern JavaScript technologies with a focus on performance, security, and scalability. Designing and integrating RESTful APIs and third-party payment/booking services for production platforms, collaborating in an Agile environment, and contributing to full-lifecycle development of travel booking, education, utility payment, and HR/attendance systems.",
+    technologies: ["Laravel", "PHP", "JavaScript", "REST API"],
   },
   {
-    role: 'Software Developer',
-    company: 'Shangrila Informatics',
-    location: 'Rudramati Marga, Kathmandu',
-    range: 'Mar 2023 — Feb 2025',
-    url: '',
+    role: "Software Developer",
+    company: "Shangrila Informatics",
+    location: "Rudramati Marga, Kathmandu",
+    range: "Mar 2023 — Feb 2025",
+    url: "",
     description:
-      'Started as an intern and grew into a full-time developer role. Developed and maintained web applications using Laravel, ensuring high performance and responsiveness across platforms. Integrated RESTful APIs for seamless frontend-backend data exchange, worked with cross-functional teams to identify and prioritize features, and conducted code reviews and developed unit & system tests to maintain software quality. Used Git for version control while collaborating via Jira in an Agile environment.',
-    technologies: ['Laravel', 'PHP', 'MySQL', 'REST API', 'Git', 'Jira'],
+      "Started as an intern and grew into a full-time developer role. Developed and maintained web applications using Laravel, ensuring high performance and responsiveness across platforms. Integrated RESTful APIs for seamless frontend-backend data exchange, worked with cross-functional teams to identify and prioritize features, and conducted code reviews and developed unit & system tests to maintain software quality. Used Git for version control while collaborating via Jira in an Agile environment.",
+    technologies: ["Laravel", "PHP", "MySQL", "REST API", "Git", "Jira"],
   },
-]
+];
 
-const easing = [0.645, 0.045, 0.355, 1]
+const easing = [0.645, 0.045, 0.355, 1];
 
 export default function Experience() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  const [index, setIndex] = useState(0)
-  const count = experiences.length
-  const tabsRef = useRef([])
-  const isFirstRender = useRef(true)
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [index, setIndex] = useState(0);
+  const count = experiences.length;
+  const tabsRef = useRef([]);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
+      isFirstRender.current = false;
+      return;
     }
-    const el = tabsRef.current[index]
-    if (el && typeof el.scrollIntoView === 'function') {
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    const el = tabsRef.current[index];
+    if (el && typeof el.scrollIntoView === "function") {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
     }
-  }, [index])
+  }, [index]);
 
   const onKeyDown = (e) => {
-    const key = e.key
-    if (key !== 'ArrowUp' && key !== 'ArrowDown' && key !== 'ArrowLeft' && key !== 'ArrowRight') return
-    e.preventDefault()
-    if (key === 'ArrowDown' || key === 'ArrowRight') setIndex((i) => (i + 1) % count)
-    else setIndex((i) => (i - 1 + count) % count)
-  }
+    const key = e.key;
+    if (
+      key !== "ArrowUp" &&
+      key !== "ArrowDown" &&
+      key !== "ArrowLeft" &&
+      key !== "ArrowRight"
+    )
+      return;
+    e.preventDefault();
+    if (key === "ArrowDown" || key === "ArrowRight")
+      setIndex((i) => (i + 1) % count);
+    else setIndex((i) => (i - 1 + count) % count);
+  };
 
   return (
-    <section id="experience" className="relative py-24 md:py-32 px-5 bg-canvas font-mono" ref={ref}>
+    <section
+      id="experience"
+      className="relative py-16 md:py-24 px-5 bg-canvas font-mono"
+      ref={ref}
+    >
       <div className="max-w-[1100px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-8"
         >
           <p className="text-[12px] text-ink-secondary mb-2">
             <span className="text-[#58a6ff]">$</span>
@@ -68,7 +83,8 @@ export default function Experience() {
           </p>
           <h2 className="section-heading mb-3">where I&apos;ve worked</h2>
           <p className="text-ink-secondary text-[14px] font-mono">
-            <span className="text-ink-muted">#</span> My professional journey building products and solving real problems.
+            <span className="text-ink-muted">#</span> My professional journey
+            building products and solving real problems.
           </p>
         </motion.div>
 
@@ -96,8 +112,8 @@ export default function Experience() {
                   onClick={() => setIndex(i)}
                   className={`relative shrink-0 min-w-[110px] md:min-w-0 md:w-full h-[42px] px-4 md:px-0 md:pl-5 md:pr-4 text-[13px] font-mono whitespace-nowrap flex items-center justify-center md:justify-start border-b-2 md:border-b-0 border-l-0 md:border-l-2 transition-colors duration-200 ${
                     index === i
-                      ? 'text-accent border-accent'
-                      : 'text-ink-muted border-border-light hover:text-ink'
+                      ? "text-accent border-accent"
+                      : "text-ink-muted border-border-light hover:text-ink"
                   }`}
                 >
                   {exp.company}
@@ -119,7 +135,7 @@ export default function Experience() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
                   role="tabpanel"
                   id={`panel-${index}`}
                   aria-labelledby={`tab-${index}`}
@@ -146,7 +162,9 @@ export default function Experience() {
 
                   <p className="mt-1 mb-6 text-[13px] text-ink-muted font-mono">
                     {experiences[index].range}
-                    {experiences[index].location ? ` · ${experiences[index].location}` : ''}
+                    {experiences[index].location
+                      ? ` · ${experiences[index].location}`
+                      : ""}
                   </p>
 
                   <ul className="list-none p-0 m-0">
@@ -172,5 +190,5 @@ export default function Experience() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
